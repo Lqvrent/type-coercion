@@ -1,5 +1,7 @@
 # Type Coercion
 
+[![CI](https://github.com/Lqvrent/type-coercion/actions/workflows/main.yml/badge.svg)](https://github.com/Lqvrent/type-coercion/actions/workflows/main.yml)
+
 ## Usage
 ```ts
 import { Coercion } from 'type-coercion';
