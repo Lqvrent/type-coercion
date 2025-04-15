@@ -12,6 +12,10 @@
         "boolean"
     ],
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Lqvrent/type-coercion.git"
+    },
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "files": [
