@@ -1,5 +1,16 @@
 {
-    "version": "0.1.0",
+    "name": "type-coercion",
+    "author": "Lqvrent",
+    "version": "1.0.0",
+    "description": "Simple node module that coerce strings to certain types",
+    "keywords": [
+        "type",
+        "coercion",
+        "coerce",
+        "string",
+        "number",
+        "boolean"
+    ],
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
@@ -31,8 +42,6 @@
         "trailingComma": "es5",
         "endOfLine": "lf"
     },
-    "name": "type-coercion",
-    "author": "Lqvrent",
     "module": "dist/type-coercion.esm.js",
     "size-limit": [
         {
