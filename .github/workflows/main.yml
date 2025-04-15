@@ -28,5 +28,8 @@ jobs:
       - name: Test
         run: yarn test --ci --coverage --maxWorkers=2
 
+      - name: Size limit
+        run: yarn size-limit
+
       - name: Build
         run: yarn build
