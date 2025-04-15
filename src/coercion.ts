@@ -1,5 +1,4 @@
 export class Coercion {
-
     static boolean(value: string): boolean {
         const truthyValues = ['true', '1', 'yes', 'on'];
 
@@ -10,13 +9,17 @@ export class Coercion {
         return false;
     }
 
-    static integer(value: string, options?: {
-        default?: number;
-        min?: number;
-        max?: number;
-        radix?: number;
-    }): number {
-        const { default: defaultValue = 0, min, max, radix = 10 } = options || {};
+    static integer(
+        value: string,
+        options?: {
+            default?: number;
+            min?: number;
+            max?: number;
+            radix?: number;
+        }
+    ): number {
+        const { default: defaultValue = 0, min, max, radix = 10 } =
+            options || {};
 
         const parsedValue = parseInt(value, radix);
 
@@ -35,13 +38,17 @@ export class Coercion {
         return parsedValue;
     }
 
-    static positiveInteger(value: string, options?: {
-        default?: number;
-        min?: number;
-        max?: number;
-        radix?: number;
-    }): number {
-        const { default: defaultValue = 0, min = 1, max, radix = 10 } = options || {};
+    static positiveInteger(
+        value: string,
+        options?: {
+            default?: number;
+            min?: number;
+            max?: number;
+            radix?: number;
+        }
+    ): number {
+        const { default: defaultValue = 0, min = 1, max, radix = 10 } =
+            options || {};
 
         const parsedValue = parseInt(value, radix);
 

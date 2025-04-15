@@ -1,8 +1,6 @@
 import { Coercion } from '../src';
 
-
 describe('Coercion', () => {
-
     describe('boolean', () => {
         it('should return true for truthy values', () => {
             expect(Coercion.boolean('true')).toBe(true);
@@ -72,8 +70,12 @@ describe('Coercion', () => {
         });
 
         it('should respect min and max options', () => {
-            expect(Coercion.positiveInteger('5', { min: 10, max: 20 })).toBe(10);
-            expect(Coercion.positiveInteger('25', { min: 10, max: 20 })).toBe(20);
+            expect(Coercion.positiveInteger('5', { min: 10, max: 20 })).toBe(
+                10
+            );
+            expect(Coercion.positiveInteger('25', { min: 10, max: 20 })).toBe(
+                20
+            );
         });
 
         it('should respect radix option', () => {
@@ -91,6 +93,4 @@ describe('Coercion', () => {
             expect(Coercion.positiveInteger('', { default: 0 })).toBe(0);
         });
     });
-
 });
-
