@@ -29,6 +29,9 @@
         "prepare": "tsdx build",
         "size": "size-limit"
     },
+    "publishConfig": {
+        "provenance": true
+    },
     "husky": {
         "hooks": {
             "pre-commit": "tsdx lint src test"
