@@ -1,7 +1,4 @@
 name: Publish
-permissions:
-    id-token: write
-    content: write
 on:
   release:
     types: [published]
@@ -16,6 +13,9 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      content: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
