@@ -93,4 +93,68 @@ describe('Coercion', () => {
             expect(Coercion.positiveInteger('', { default: 0 })).toBe(0);
         });
     });
+
+    describe('float', () => {
+        it('should return parsed float value', () => {
+            expect(Coercion.float('123.45')).toBe(123.45);
+            expect(Coercion.float('456.78')).toBe(456.78);
+            expect(Coercion.float('789.01')).toBe(789.01);
+        });
+
+        it('should return default value for non-float strings', () => {
+            expect(Coercion.float('abc', { default: 10.5 })).toBe(10.5);
+            expect(Coercion.float('true', { default: 10.5 })).toBe(10.5);
+        });
+
+        it('should respect min and max options', () => {
+            expect(Coercion.float('5.5', { min: 10, max: 20 })).toBe(10);
+            expect(Coercion.float('25.5', { min: 10, max: 20 })).toBe(20);
+        });
+
+        it('should return default value for NaN', () => {
+            expect(Coercion.float('abc', { default: 10.5 })).toBe(10.5);
+            expect(Coercion.float('true', { default: 10.5 })).toBe(10.5);
+        });
+
+        it('should return default value for empty string', () => {
+            expect(Coercion.float('', { default: 10.5 })).toBe(10.5);
+            expect(Coercion.float('', { default: 0 })).toBe(0);
+        });
+    });
+
+    describe('positiveFloat', () => {
+        it('should return parsed positive float value', () => {
+            expect(Coercion.positiveFloat('123.45')).toBe(123.45);
+            expect(Coercion.positiveFloat('456.78')).toBe(456.78);
+            expect(Coercion.positiveFloat('789.01')).toBe(789.01);
+        });
+
+        it('should return default value for non-positive floats', () => {
+            expect(Coercion.positiveFloat('-5.5', { default: 10.5 })).toBe(
+                10.5
+            );
+            expect(Coercion.positiveFloat('0', { default: 10.5 })).toBe(10.5);
+        });
+
+        it('should respect min and max options', () => {
+            expect(Coercion.positiveFloat('5.5', { min: 10, max: 20 })).toBe(
+                10
+            );
+            expect(Coercion.positiveFloat('25.5', { min: 10, max: 20 })).toBe(
+                20
+            );
+        });
+
+        it('should return default value for NaN', () => {
+            expect(Coercion.positiveFloat('abc', { default: 10.5 })).toBe(10.5);
+            expect(Coercion.positiveFloat('true', { default: 10.5 })).toBe(
+                10.5
+            );
+        });
+
+        it('should return default value for empty string', () => {
+            expect(Coercion.positiveFloat('', { default: 10.5 })).toBe(10.5);
+            expect(Coercion.positiveFloat('', { default: 0 })).toBe(0);
+        });
+    });
 });

@@ -66,6 +66,41 @@ Coercion.positiveInteger("84", { min: 0, max: 42 }); // 42
 Coercion.positiveInteger("A", { radix: 16 }); // 10
 ```
 
+### Float
+Optional options:
+```ts
+type Options = {
+    default?: number;
+    min?: number;
+    max?: number;
+}
+```
+Defaults to `0` if no default is provided.
+```ts
+Coercion.float("10.5"); // 10.5
+Coercion.float("foo"); // 0
+Coercion.float("bar", { default: 10.5 }); // 10.5
+Coercion.float("84.5", { min: 0, max: 42 }); // 42
+```
+
+### Positive Float
+Optional options:
+```ts
+type Options = {
+    default?: number;
+    min?: number;
+    max?: number;
+}
+```
+Defaults to `0` if no default is provided.
+```ts
+Coercion.positiveFloat("10.5"); // 10.5
+Coercion.positiveFloat("-10.5"); // 0
+Coercion.positiveFloat("foo"); // 0
+Coercion.positiveFloat("bar", { default: 10.5 }); // 10.5
+Coercion.positiveFloat("84.5", { min: 0, max: 42 }); // 42
+```
+
 ### Contributing
 Feel free to open an issue or a pull request if you have any suggestions or improvements. Adding new coercion functions is especially welcome!
 

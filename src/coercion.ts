@@ -66,4 +66,58 @@ export class Coercion {
 
         return parsedValue;
     }
+
+    static float(
+        value: string,
+        options?: {
+            default?: number;
+            min?: number;
+            max?: number;
+        }
+    ): number {
+        const { default: defaultValue = 0, min, max } = options || {};
+
+        const parsedValue = parseFloat(value);
+
+        if (isNaN(parsedValue)) {
+            return defaultValue;
+        }
+
+        if (min !== undefined && parsedValue < min) {
+            return min;
+        }
+
+        if (max !== undefined && parsedValue > max) {
+            return max;
+        }
+
+        return parsedValue;
+    }
+
+    static positiveFloat(
+        value: string,
+        options?: {
+            default?: number;
+            min?: number;
+            max?: number;
+        }
+    ): number {
+        const { default: defaultValue = 0, min = 0, max } = options || {};
+
+        const parsedValue = parseFloat(value);
+
+        if (isNaN(parsedValue) || parsedValue <= 0) {
+            return defaultValue;
+        }
+
+        if (min !== undefined && parsedValue < min) {
+            return min;
+        }
+
+        if (max !== undefined && parsedValue > max) {
+            return max;
+        }
+
+        return parsedValue;
+    }
 }
