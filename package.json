@@ -1,7 +1,7 @@
 {
     "name": "type-coercion",
     "author": "Lqvrent",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Simple node module that coerce strings to certain types",
     "keywords": [
         "type",
