@@ -130,7 +130,9 @@ describe('Coercion', () => {
         });
 
         it('should return default value for non-positive floats', () => {
-            expect(Coercion.positiveFloat('-5.5', { default: 10.5 })).toBe(10.5);
+            expect(Coercion.positiveFloat('-5.5', { default: 10.5 })).toBe(
+                10.5
+            );
             expect(Coercion.positiveFloat('0', { default: 10.5 })).toBe(10.5);
         });
 
@@ -145,7 +147,9 @@ describe('Coercion', () => {
 
         it('should return default value for NaN', () => {
             expect(Coercion.positiveFloat('abc', { default: 10.5 })).toBe(10.5);
-            expect(Coercion.positiveFloat('true', { default: 10.5 })).toBe(10.5);
+            expect(Coercion.positiveFloat('true', { default: 10.5 })).toBe(
+                10.5
+            );
         });
 
         it('should return default value for empty string', () => {

@@ -75,8 +75,7 @@ export class Coercion {
             max?: number;
         }
     ): number {
-        const { default: defaultValue = 0, min, max } =
-            options || {};
+        const { default: defaultValue = 0, min, max } = options || {};
 
         const parsedValue = parseFloat(value);
 
@@ -103,8 +102,7 @@ export class Coercion {
             max?: number;
         }
     ): number {
-        const { default: defaultValue = 0, min = 0, max } =
-            options || {};
+        const { default: defaultValue = 0, min = 0, max } = options || {};
 
         const parsedValue = parseFloat(value);
 
